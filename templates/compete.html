@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(#052240,#052240,#7e8ea0);
+            /* background-size:cover; */
+            background-repeat: no-repeat;
+            background-position:center;
+            background-color:#052240;
+        }
+        #navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 10px 160px;
+            /* border: solid 2px #FFF; */
+            width: 100%;
+        }
+        #logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo img{
+            height: 50px;
+        }
+        #logo a{
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #header_top{
+            /* border: solid 3px #FFF; */
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 4%;
+        }
+        #nav_back{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #nav_back button{
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            height: 80px;
+            width: 80px;
+            background-color: transparent;
+            border: solid 4px #FFF;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #nav_back button:hover{
+            /* background-color: #00a37d; */
+            color: #d6e4e0;
+            border: 4px solid #d6e4e0;
+        }
+        #nav_next{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #nav_next button{
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            height: 80px;
+            width: 80px;
+            background-color: transparent;
+            border: solid 4px #FFF;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #nav_next button:hover{
+            color: #d6e4e0;
+            border: 4px solid #d6e4e0;
+        }
+        #header_prob1{
+            height:100%;
+            width: 40%;
+            border-radius: 2%;
+            background-color: white;
+        }
+        #header_prob{
+            height:100%;
+            width: 40%;
+            border-radius: 2%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* overflow: scroll; */
+        }
+        #separator p{
+            color: #FFF;
+            font-size: 80px;
+            margin: 10px;
+        }
+        #prob_in{
+            height: 98.5%;
+            width: 98%;
+            padding: 25px 12px 15px 12px;
+            box-shadow: 5px 5px 15px 10px white;
+        }
+        #prob_in h3{
+            line-height: 30px;
+        }
+        #prob_in span{
+            line-height: 20px;
+            font-size: 17px;
+        }
+        #sol_in{
+            height: 98.5%;
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            padding: 25px 12px 15px 12px;
+            box-shadow: 5px 5px 15px 10px white;
+            /* justify-content: space-between; */
+        }
+        .sol_in_el{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .op_box {
+            height: 200px;
+            border-radius: 10px;
+            background-color: #05224017;
+            margin: 10px 0;
+        }
+        
+        #submit_btn{
+            width: 100px;
+            height: 30px;
+            margin: 20px 50px;
+        }
+        #submit_div{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        #submit_in{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="nav">
+        <div id="logo">
+            <img src="../static/image/icon.png" alt="ELIFCODE">
+            <a href="/" style="color: #FFFFFF;">ELIFCODE</a>
+        </div>
+    </nav>
+    <header id="header_top">
+        <div id="nav_back">
+            <form action="">
+                <button><</button>
+            </form>
+        </div>
+        <div id="header_prob">
+            <div id="prob_in">
+                <h3>1.Hacker's Eve</h3>
+                <span>{{prob}}</span>
+                <br><br>
+                <h3><em>Input</em></h3>
+                <span>{{inp}}</span>
+                <br><br>
+                <h3><em>Output</em></h3>
+                <span>{{op}}</span>
+                <br><br>
+                <h3><em>Constraint</em></h3>
+                <span>
+                    {% for i in constraint %}
+                    <li style="list-style:none;">{{i}}</li>
+                    {% endfor %}
+                </span>
+                
+                <h3 style="margin-top: 60px;text-decoration: underline;">Upload Code</h3>
+                <div id="submit_div">
+                    <div id="submit_in">
+                        <form action = "/compete" method = "post" enctype="multipart/form-data">  
+                            <input id="file_btn" type="file" name="file" /> 
+                            <input style="border: solid 2px #052240;" id="submit_btn" type = "submit" value="Upload">  
+                        </form> 
+                    </div>
+                     
+                    {% if msg %}
+                        <span style="margin: 0 3%;"><em>{{msg}}</em></span>
+                    {% endif %}
+                </div>
+                
+            </div>
+        </div>
+        <div id="separator">
+            <p>></p>
+        </div>
+        <div id="header_prob">
+            <div id="sol_in">
+                <div id="sol_op" class="sol_in_el">
+                    <h3><em>Output</em></h3>
+                    <div id="output" class="op_box"></div>
+                </div>
+                
+                <div id="sol_exp" class="sol_in_el">
+                    <h3><em>Expected Output</em></h3>
+                    <div id="expected_output" class="op_box"></div>
+                </div>
+                <div style="display: flex;">
+                    <h3><em>Total Cases Passed</em></h3>
+                </div>
+            </div>
+        </div>
+        <div id="nav_next">
+            <form action="">
+                <button>></button>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

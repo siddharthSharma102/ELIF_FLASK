@@ -1,0 +1,13 @@
+!<arch>
+test.c/         1629878289  0     0     100666  79        `
+#include<stdio.h>
+
+int test(){
+	return 102;
+}
+
+
+main(){
+	return 0;
+}
+

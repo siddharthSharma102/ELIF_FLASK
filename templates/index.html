@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url(../static/image/bg2_1.jpg);
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position:center;
+            
+        }
+        #navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 10px 160px;
+            /* border: solid 2px #FFF; */
+            width: 100%;
+        }
+        #logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo img{
+            height: 50px;
+        }
+        #logo a{
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #head_top{
+            /* border: solid 2px #FFF; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 95vh;
+            width: 100%;
+        }
+        #head_left{
+            /* border: solid 2px #FFF; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            color: white;
+            height: 95vh;
+            width: 50%;
+        }
+        #head_left_in{
+            /* border:solid 2px #FFFF; */
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        .head_left_h1{
+            font-size: 50px;
+            font-weight: bold;
+            /* color: #06213F; */
+        }
+        #head_left_h2{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #head_left_btn input{
+            border: solid 2px #00BD91;
+            font-size: 20px;
+            background-color: transparent;
+            height: 50px;
+            width: 120px;
+            padding: 10px;
+            margin: 70px 0 0;
+            color: #FFF;
+        }
+        #head_left_btn input:hover{
+            background-color: #06311455;
+            font-size: 21px;
+        }
+        #partition{
+            height: 70vh;
+            border: solid 1px #FFF;
+        }
+        #head_right{
+            /* border: solid 2px #FFF; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            color: white;
+            height: 95vh;
+            width: 50%;
+        }
+        #head_right_in{
+            /* border: solid 2px #FFF; */
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+        #head_right_in button{
+            border: solid 2px #00BD91;
+            width: 100%;
+            height: 130px;
+            margin: 40px 0px;
+            background-color: transparent;
+            color: #FFFF;
+            font-weight: bold;
+            font-size: 23px;
+        }
+        #head_right_in button:hover{
+            background-color: #06311455;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="nav">
+        <div id="logo">
+            <img src="../static/image/icon.png" alt="ELIFCODE">
+            <a href="/" style="color: #FFFFFF;">ELIFCODE</a>
+        </div>
+    </nav>
+    <header id="head_top">
+        <div id="head_left">
+            <div id="head_left_in">
+                <p><span class="head_left_h1" style="color: #00BD91;">ELIF</span><span class="head_left_h1">CODE</span></p>
+                <p><span id="head_left_h2">Learn, Code, Compete & Earn.</span></p>
+
+                <div id="head_left_btn">
+                    <form action="/about" id="about_btn">
+                        <input type="submit" value="About">
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="partition"></div>
+        <div id="head_right">
+            <div id="head_right_in">
+                <form action="/compete">
+                    <button><span><i class="fa fa-trophy" aria-hidden="true"></i> <br> COMPETITIONS</span></button>
+                </form>
+                <form action="/compete">
+                    <button><span><i class="fa fa-shield" aria-hidden="true"></i> <br> 1V1</span></button>
+                </form>
+                <form action="/compete">
+                    <button><span><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <br> PRACTICE & LEARN</span></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    
+</body>
+</html>

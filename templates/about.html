@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url(../static/image/bg2_1.jpg);
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position:center;
+            
+        }
+        #navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 10px 160px;
+            /* border: solid 2px #FFF; */
+            width: 100%;
+        }
+        #logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo img{
+            height: 50px;
+        }
+        #logo a{
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #head_top{
+            /* border: solid 2px #FFF; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            width: 100%;
+        }
+        #head_top_in{
+            width: 70%;
+            line-height: 30px;
+            padding: 10px 25px;
+            backdrop-filter: blur(4px);
+        }
+        #head_top_in p{
+            color: white;
+            font-size: 18px;
+            margin: 10px 20px 15px 20px;
+        }
+        #head_top_in h2{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="nav">
+        <div id="logo">
+            <img src="../static/image/icon.png" alt="ELIFCODE">
+            <a href="/" style="color: #FFFFFF;">ELIFCODE</a>
+        </div>
+    </nav>
+
+    <header id="head_top">
+        <div id="head_top_in">
+            
+            <h2>WHAT’S THE <span style="color:#00BD91;">ELIFCODE</span>?</h2>
+            <p>
+                <strong style="text-decoration:underline;">ELIFCODE</strong> is a game to improve your coding efficiency by solving short programming problems with other people, at the same time. Players share their solution at the end of a game to help other players improve their coding skills.
+                Players can also participate in regular contests and gain experience.
+            </p>
+            <h2>WHAT'S THE <span style="color:#00BD91;">PURPOSE</span>?</h2>
+            <p>
+                ⭐ Improve your problem-solving skills<br>
+                ⭐ Learn from other people’s code<br>
+                ⭐ Practice coding interview questions<br>
+            </p>
+            <p style="margin:50px 10px 40px 10px;">
+                <em>You can look up stuff. You can take your time. You shall have fun. Everyone is a winner, even if 0% of the tests work — <span style="color:#00BD91;">SaintPlaysThings</span></em>
+            </p>
+        </div>
+    </header>
+</body>
+</html>
